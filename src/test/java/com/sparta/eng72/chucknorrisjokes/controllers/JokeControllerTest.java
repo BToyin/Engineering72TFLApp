@@ -1,4 +1,4 @@
-package com.sparta.eng72.journeyplanner.controllers;
+package com.sparta.eng72.chucknorrisjokes.controllers;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
