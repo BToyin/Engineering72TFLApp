@@ -4,27 +4,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta charset="UTF-8">
-    <title>Journey Planner</title>
+    <title>Chuck Norris</title>
 </head>
 <body>
 <div class="site-wrapper">
     <div class="site-wrapper-inner">
         <div class="jumbotron">
-            <h1 class="display-4" th:text="'Journey Planner'">Journey Planner </h1>
+            <h1 class="display-4" th:text="'Journey Planner'">Chuck Norris Jokes</h1>
             <form th:action="@{/journey}" method="post" class="form-group">
-                <label>Start Station:</label>
-                <select class="form-control" name="startPoint">
-                    <option th:each="station: ${stations}" th:text="${station.name}">
+                <label>Catogory:</label>
+                <select class="form-control" name="category">
+                    <option th:each="joke: ${jokes}" th:text="${joke.name}">
                 </select>
-
-                <label>End Station:</label>
-                <select class="form-control" name="endPoint">
-                    <option th:each="station: ${stations}" th:text="${station.name}">
-                </select>
-                <input class="btn-dark btn-lg" type="submit" value="Plan Journey">
+                <div th:if="${category == null or #lists.isEmpty(categories)}">
+                    <div class="alert alert-danger">Please select a cateogry from the list</div>
+                </div>
+                <input class="btn-dark btn-lg" type="submit" value="Show Jokes">
             </form>
         </div>
     </div>
+</div>
+<div>
+    <h1 th:text="${message}"> </h1>
+    <p th:each="station: ${journey}" th:text="${station.name}">
 </div>
 </body>
 </html>
