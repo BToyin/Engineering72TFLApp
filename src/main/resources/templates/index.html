@@ -11,17 +11,18 @@
     <div class="site-wrapper-inner">
         <div class="jumbotron">
             <h1 class="display-4" th:text="'Journey Planner'">Journey Planner </h1>
-                <form th:action="@{/journey}" method="post" class="form-group">
-                    <label>Start Station:</label>
-                    <select class="form-control" name="startPoint">
-                        <option th:each="station: ${stations}" th:text="${station.name}">
-                    </select>
-                    <label>End Station:</label>
-                    <select class="form-control" name="endPoint">
-                        <option th:each="station: ${stations}" th:text="${station.name}">
-                    </select>
-                    <input class="btn-dark btn-lg" type="submit" value="Plan Journey">
-                </form>
+            <form th:action="@{/journey}" method="post" class="form-group">
+                <label>Start Station:</label>
+                <select class="form-control" name="startPoint">
+                    <option th:each="station: ${stations}" th:text="${station.name}">
+                </select>
+
+                <label>End Station:</label>
+                <select class="form-control" name="endPoint">
+                    <option th:each="station: ${stations}" th:text="${station.name}">
+                </select>
+                <input class="btn-dark btn-lg" type="submit" value="Plan Journey">
+            </form>
         </div>
     </div>
 </div>
